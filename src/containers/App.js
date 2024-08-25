@@ -7,7 +7,7 @@ function App() {
       <div className="container">
         <div className="row min-vh-100">
           <div className="col-6 m-auto">
-            <Button onClick={() => alert("ACA")}> Cargar Información </Button>
+            <Button onClick={() => alert("ACA")}>Mostrar Pokemons</Button>
           </div>
         </div>
       </div>
