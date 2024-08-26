@@ -1,7 +1,27 @@
 import { FC } from "react"
+import { SCFormContainer, SCLogo } from "./header.styles"
+import { LogoPokemon } from "../../images/LogoPokemon"
+import { messages } from "../../constant/messages"
 
-export const Header: FC = () => {
+interface IHeader {
+  handleSearch: () => void
+}
+
+export const Header: FC<IHeader> = ({ handleSearch }) => {
   return (
-    <div>Header</div>
+    <nav className="navbar bg-warning">
+      <div className="container-fluid">
+        <SCLogo className="navbar-brand">
+          <LogoPokemon/>
+        </SCLogo>
+        <SCFormContainer>
+          <input
+            type="search"
+            placeholder={messages.placeHolderSearch}
+            aria-label={messages.placeHolderSearch}
+          />
+        </SCFormContainer>
+      </div>
+    </nav>
   )
 }

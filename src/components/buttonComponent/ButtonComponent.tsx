@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC } from "react"
 
 interface IButtonComponent {
   onClick: () => void
@@ -6,6 +6,8 @@ interface IButtonComponent {
 
 export const ButtonComponent: FC<IButtonComponent> = ({ onClick }) => {
   return (
-    <button className='btn btn-primary' onClick={onClick}>Buscar Pokemons</button>
+    <button className="btn btn-primary" onClick={onClick}>
+      Buscar Pokemons
+    </button>
   )
 }

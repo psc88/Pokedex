@@ -5,19 +5,35 @@ import { ButtonComponent } from "../../components"
 import { LoadingComponent } from "../../components/loadingComponent"
 import { usePokedexMain } from "./usePokedexMain"
 import { CardComponent } from "../../components/cardComponent"
+import { Footer } from "../footer"
+import { PaginationComponent } from "../../components/paginationComponent"
 
 export const PokedexMain: FC = () => {
-  const { fetchPokemons, loading, pokemonsList } = usePokedexMain()
-  console.log(pokemonsList)
-  
+  const {
+    fetchPokemons,
+    handleSetCurrentPage,
+    loading,
+    pokemonsList,
+    paginatedPokemons,
+    currentPage,
+    itemsPerPage
+  } = usePokedexMain()  
+
   return (
     <SCContainer>
-      <Header/>
-      <ButtonComponent
-        onClick={() => fetchPokemons()}
+      <Header handleSearch={() => {}} />
+      {loading && <LoadingComponent />}
+      {!pokemonsList.length && !loading && (
+        <ButtonComponent onClick={() => fetchPokemons()} />
+      )}
+      <CardComponent pokemonsList={paginatedPokemons} />
+      <PaginationComponent
+        currentPage={currentPage}
+        handleSetCurrentPage={handleSetCurrentPage}
+        itemsPerPage={itemsPerPage}
+        totalItems={pokemonsList.length}
       />
-      <CardComponent/>
-      {loading && (<LoadingComponent />)}
+      <Footer />
     </SCContainer>
   )
 }
