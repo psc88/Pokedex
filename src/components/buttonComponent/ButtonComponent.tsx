@@ -6,6 +6,6 @@ interface IButtonComponent {
 
 export const ButtonComponent: FC<IButtonComponent> = ({ onClick }) => {
   return (
-    <div onClick={onClick}>Goo</div>
+    <button className='btn btn-primary' onClick={onClick}>Buscar Pokemons</button>
   )
 }
