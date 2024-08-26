@@ -1,4 +1,8 @@
 export interface IContextValues {
-  valueTest: boolean
-  handleSetValueTest: () => void 
+  pokemonsList: any[]
+  loading: boolean
+  error: string | null
+  handleSetPokemonsList: (data: any) => void  
+  handleSetLoading: (value: boolean) => void
+  handleSetError: (value: string | null) => void
 }
