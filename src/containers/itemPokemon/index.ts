@@ -1,1 +1,0 @@
-export { ItemPokemon } from './ItemPokemon'

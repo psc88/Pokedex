@@ -1,13 +1,21 @@
-import { FC } from "react"
-
-interface IButtonComponent {
-  onClick: () => void
-}
+import { FC } from "react";
+import { IButtonComponent } from "./buttonComponent.interface";
+import {
+  InnerPokeballCenter,
+  PokeballBottom,
+  PokeballButton,
+  PokeballCenter,
+  PokeballTop,
+} from "./buttonComponent.styles";
 
 export const ButtonComponent: FC<IButtonComponent> = ({ onClick }) => {
   return (
-    <button className="btn btn-primary" onClick={onClick}>
-      Buscar Pokemons
-    </button>
-  )
-}
+    <PokeballButton onClick={onClick}>
+      <PokeballTop />
+      <PokeballCenter>
+        <InnerPokeballCenter />
+      </PokeballCenter>
+      <PokeballBottom />
+    </PokeballButton>
+  );
+};

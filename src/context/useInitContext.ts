@@ -4,7 +4,6 @@ export const useInitContext = () => {
   const [pokemonsList, setPokemonsList] = useState<any>([])
   const [loading, setLoading] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null)
-  // const [page, setPage] = useState<number>(1)
 
   const handleSetPokemonsList = (data: any) => {
     setPokemonsList(data)

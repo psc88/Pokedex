@@ -44,7 +44,7 @@ export const PaginationComponent: FC<IPaginationComponent> = ({
 
   return (
     <nav aria-label="Pokemon pagination">
-      <ul className="pagination pagination-lg justify-content-center">
+      <ul className="pagination pagination-sl justify-content-center">
         <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
           <button className="page-link" onClick={handlePrevClick} disabled={currentPage === 1}>
             Prev
@@ -66,5 +66,5 @@ export const PaginationComponent: FC<IPaginationComponent> = ({
         </li>
       </ul>
     </nav>
-  );
+  )
 }

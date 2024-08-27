@@ -1,5 +1,5 @@
 export const messages = {
-  title: 'Pokedex',
+  PokedexTitle: 'Pokedex',
   placeHolderSearch: 'Buscar Pokemon',
   buttonSearch: 'Buscar'
 }

@@ -1,27 +1,16 @@
-import { FC } from "react"
-import { SCFormContainer, SCLogo } from "./header.styles"
-import { LogoPokemon } from "../../images/LogoPokemon"
-import { messages } from "../../constant/messages"
+import { FC } from "react";
+import { SCFormContainer, SCHeader, SCHeaderContainer } from "./header.styles";
+import { messages } from "../../constant/messages";
+import { PokeIcon } from "../../images/PokeIcon";
+import { IHeader } from "./header.interface";
 
-interface IHeader {
-  handleSearch: () => void
-}
-
-export const Header: FC<IHeader> = ({ handleSearch }) => {
+export const Header: FC<IHeader> = ({ handleButtonBackToHome }) => {
   return (
-    <nav className="navbar bg-warning">
-      <div className="container-fluid">
-        <SCLogo className="navbar-brand">
-          <LogoPokemon/>
-        </SCLogo>
-        <SCFormContainer>
-          <input
-            type="search"
-            placeholder={messages.placeHolderSearch}
-            aria-label={messages.placeHolderSearch}
-          />
-        </SCFormContainer>
-      </div>
-    </nav>
-  )
-}
+    <SCHeaderContainer>
+      <SCHeader onClick={handleButtonBackToHome}>
+        <PokeIcon />
+        <SCFormContainer>{messages.PokedexTitle}</SCFormContainer>
+      </SCHeader>
+    </SCHeaderContainer>
+  );
+};

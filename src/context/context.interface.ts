@@ -1,3 +1,19 @@
+import { PokeTypes } from "../utils/BackgroundsByType"
+export interface IUseFetchPokemon {
+  handleSetLoading: (value: boolean) => void
+  handleSetError: (value: string | null) => void
+  handleSetPokemonsList: (data: any) => void
+}
+
+export type TPokeType = {
+  name: PokeTypes
+  url: string
+}
+
+export type TAllPokeResult = {
+  name: PokeTypes
+  url: string
+}
 export interface IContextValues {
   pokemonsList: any[]
   loading: boolean
@@ -5,4 +21,8 @@ export interface IContextValues {
   handleSetPokemonsList: (data: any) => void  
   handleSetLoading: (value: boolean) => void
   handleSetError: (value: string | null) => void
+  // types: TPokeType[]
+  // filterSelected: TPokeType
+  // filteredPokemon: string[] | null
+  // changeSelectedType: (type: TPokeType) => void
 }

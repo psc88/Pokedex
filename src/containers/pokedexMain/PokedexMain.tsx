@@ -1,12 +1,11 @@
-import { FC } from "react"
-import { SCContainer } from "./PokedexMain.styles"
-import { Header } from "../header"
-import { ButtonComponent } from "../../components"
-import { LoadingComponent } from "../../components/loadingComponent"
-import { usePokedexMain } from "./usePokedexMain"
-import { CardComponent } from "../../components/cardComponent"
-import { Footer } from "../footer"
-import { PaginationComponent } from "../../components/paginationComponent"
+import { FC } from "react";
+import { SCContainer, SCLabel } from "./PokedexMain.styles";
+import { Header } from "../header";
+import { ButtonComponent } from "../../components";
+import { LoadingComponent } from "../../components/loadingComponent";
+import { usePokedexMain } from "./usePokedexMain";
+import { CardComponent } from "../../components/cardComponent";
+import { PaginationComponent } from "../../components/paginationComponent";
 
 export const PokedexMain: FC = () => {
   const {
@@ -16,24 +15,27 @@ export const PokedexMain: FC = () => {
     pokemonsList,
     paginatedPokemons,
     currentPage,
-    itemsPerPage
-  } = usePokedexMain()  
-
+    itemsPerPage,
+  } = usePokedexMain();
   return (
     <SCContainer>
-      <Header handleSearch={() => {}} />
+      <Header handleButtonBackToHome={() => {}} />
       {loading && <LoadingComponent />}
       {!pokemonsList.length && !loading && (
-        <ButtonComponent onClick={() => fetchPokemons()} />
+        <>
+          <ButtonComponent onClick={() => fetchPokemons()} />
+          <SCLabel>¡Descrubre los Pokémon!</SCLabel>
+        </>
+      )}
+      {!!pokemonsList.length && (
+        <PaginationComponent
+          currentPage={currentPage}
+          handleSetCurrentPage={handleSetCurrentPage}
+          itemsPerPage={itemsPerPage}
+          totalItems={pokemonsList.length}
+        />
       )}
       <CardComponent pokemonsList={paginatedPokemons} />
-      <PaginationComponent
-        currentPage={currentPage}
-        handleSetCurrentPage={handleSetCurrentPage}
-        itemsPerPage={itemsPerPage}
-        totalItems={pokemonsList.length}
-      />
-      <Footer />
     </SCContainer>
-  )
-}
+  );
+};
