@@ -5,6 +5,7 @@ export const URLBase = {
 export const colors = {
   HEX: {
     WHITE: '#FFFFFF',
+    WHITE_BACKGROUND: 'rgba(255, 255, 255, 0.7)',
     DARK_BLUE: '#0E1830',
     LIGHTPINK: '#f8f1f1',
     LIGHT_GRAY: '#d3d3d3',
@@ -15,7 +16,15 @@ export const colors = {
     BACKGROUND_BLACK: 'rgba(0, 0, 0, 0.1)',
     BACKGROUND_BLACK2: 'rgba(0, 0, 0, 0.2)',
     BACKGROUND_BLACK3: 'rgba(0, 0, 0, 0.3)',
-    RED_POKE: '#f00',
-
+    RED_POKE: '#f00'
   }
 }
+
+export const statsMapping = [
+  { label: "hp" },
+  { label: "attack"},
+  { label: "defense"},
+  { label: "specialAttack"},
+  { label: "specialDttack"},
+  { label: "speed"}
+]

@@ -9,8 +9,6 @@ export const usePokedexDetail = () => {
   const navigate = useNavigate()
 
   const searchPokemon = () => {
-    console.log({ pokemonsList, pokeId })
-
     setpokeSelected(
       pokemonsList.find((element) => element.id === parseInt(pokeId!))
     )

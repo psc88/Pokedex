@@ -1,90 +1,108 @@
 import styled from 'styled-components'
 import { colors } from '../../constant/constant'
 
-export const Container = styled.div`
-  padding: 20px;
-  max-width: 800px;
+export const SCContainerDetail = styled.div<{backgroundColor: string}>`
+  background-color: ${({backgroundColor}) => backgroundColor};
+  border-radius: 16px;
+  box-shadow: 0 4px 8px ${colors.HEX.BACKGROUND_BLACK3};
+  padding: 24px;
+  max-width: 400px;
   margin: auto;
+`
+
+export const SCHeaderCard = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+export const SCSpanName = styled.span`
   text-align: center;
-`
-
-export const PokemonImage = styled.img`
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
-  border: 4px solid ${colors.HEX.LIGHT_GRAY};
-  box-shadow: 0 4px 8px ${colors.HEX.BACKGROUND_BLACK2};
-`
-
-export const PokemonName = styled.h1`
-  font-size: 2.5rem;
-  color: ${colors.HEX.DARK_GRAY};
   text-transform: capitalize;
-  margin-bottom: 10px;
-  font-family: 'Pokemon', sans-serif;
+  font-size: 28px;
 `
 
-export const PokemonDescription = styled.p`
-  font-size: 1rem;
-  color: ${colors.HEX.LIGHT_GRAY2};
-  margin: 20px 0;
-  line-height: 1.5;
-`
-
-export const StatsContainer = styled.div`
-  margin-top: 20px;
-  text-align: left;
-  display: inline-block;
-  border: 1px solid ${colors.HEX.LIGHT_GRAY};
-  padding: 10px;
-  border-radius: 8px;
-  background-color: ${colors.HEX.WHITE};
-  box-shadow: 0 4px 8px ${colors.HEX.BACKGROUND_BLACK};
-`
-
-export const StatsTitle = styled.h2`
-  font-size: 1.5rem;
-  color: ${colors.HEX.DARK_GRAY};
-  margin-bottom: 10px;
-  font-family: 'Pokemon', sans-serif;
-`;
-
-export const Stat = styled.p`
-  font-size: 1rem;
-  color: ${colors.HEX.MEDIUM_GRAY};
-  margin: 5px 0;
-`
-
-export const TypesContainer = styled.div`
-  margin-top: 20px;
-`
-
-export const Type = styled.span<{ typeColor: string }>`
-  display: inline-block;
-  padding: 5px 10px;
-  margin: 5px;
-  background-color: ${props => props.typeColor};
-  border-radius: 5px;
-  font-size: 0.875rem;
+export const SCBackAndLabel = styled.div`
+  background: none;
+  border: none;
   color: ${colors.HEX.WHITE};
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  gap: 8px;
   font-weight: bold;
 `
 
-export const BackButton = styled.button`
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: ${colors.HEX.WHITE};
+export const SCBackButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
-  border-radius: 50%;
-  box-shadow: 0 4px 8px ${colors.HEX.BACKGROUND_BLACK2};
-  padding: 10px;
+  background: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  color: ${colors.HEX.WHITE};
+  width: 30px;
+  height: 30px;
+  transition: 0.3s ease;
   &:hover {
     background-color: ${colors.HEX.WHITE};
+    border-radius: 50%;
+    opacity: 0.8;
+    color: ${colors.HEX.DARK_BLUE};
   }
-  &:focus {
-    outline: none;
-  }
+`
+
+export const SCPokemonNumber = styled.span`
+  top: 16px;
+  right: 16px;
+  color: ${colors.HEX.WHITE};
+  font-size: 20px;
+  font-weight: bold;
+`
+
+export const SCPokemonImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 60px;
+`
+
+export const SCPokemonImage = styled.img`
+  width: 200px;
+  z-index: 1;
+`
+
+export const SCPokemonDetailCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: ${colors.HEX.WHITE_BACKGROUND};
+  border-radius: 16px;
+  box-shadow: 0 4px 8px ${colors.HEX.BACKGROUND_BLACK};
+  padding: 48px 24px;
+  gap: 12px;
+`
+
+export const SCPokemonDescription = styled.span<{color: string}>`
+  color: ${({color}) => color};
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+`
+
+export const SCTypeContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+`
+
+export const SCTypeBadge = styled.span<{ typeColor: string }>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${({ typeColor }) => typeColor};
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  padding: 4px 8px;
 `

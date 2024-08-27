@@ -31,7 +31,7 @@ export const useFetchPokemon = ({
               )
               const speciesData = await speciesResponse.json()
               const descriptionEntry = speciesData.flavor_text_entries.find(
-                (entry: any) => entry.language.name === "en"
+                (entry: any) => entry.language.name === "es"
               )
               description = descriptionEntry
                 ? descriptionEntry.flavor_text
@@ -50,6 +50,9 @@ export const useFetchPokemon = ({
                 hp: pokemonDetail.stats.find((stat: any) => stat.stat.name === "hp")?.base_stat || "N/A",
                 attack: pokemonDetail.stats.find((stat: any) => stat.stat.name === "attack")?.base_stat || "N/A",
                 defense: pokemonDetail.stats.find((stat: any) => stat.stat.name === "defense")?.base_stat || "N/A",
+                speed: pokemonDetail.stats.find((stat: any) => stat.stat.name === "speed")?.base_stat || "N/A",
+                specialAttack: pokemonDetail.stats.find((stat: any) => stat.stat.name === "special-attack")?.base_stat || "N/A",
+                specialDttack: pokemonDetail.stats.find((stat: any) => stat.stat.name === "special-defense")?.base_stat || "N/A",
                 weight: pokemonDetail.weight,
                 height: pokemonDetail.height,
                 abilities: pokemonDetail.abilities.slice(0, 2).map((ability: any) => ability.ability.name),

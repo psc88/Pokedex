@@ -1,52 +1,60 @@
-import { FC } from "react"
-import { usePokedexDetail } from "./usePokedexDetail"
+import { FC } from "react";
+import { usePokedexDetail } from "./usePokedexDetail";
 import {
-  BackButton,
-  Container,
-  PokemonDescription,
-  PokemonImage,
-  PokemonName,
-  Stat,
-  StatsContainer,
-  StatsTitle,
-  Type,
-  TypesContainer,
-} from "./pokedexDetail.styles"
-import { background } from "../../utils/BackgroundsByType"
-import { FaArrowLeft } from "react-icons/fa"
-import { colors } from "../../constant/constant"
+  SCContainerDetail,
+  SCHeaderCard,
+  SCSpanName,
+  SCPokemonNumber,
+  SCBackAndLabel,
+  SCBackButton,
+  SCPokemonImage,
+  SCPokemonImageWrapper,
+  SCPokemonDetailCard,
+  SCPokemonDescription,
+  SCTypeContainer,
+  SCTypeBadge,
+} from "./pokedexDetail.styles";
+import { background } from "../../utils/BackgroundsByType";
+import { FaArrowLeft } from "react-icons/fa";
+import { colors } from "../../constant/constant";
+import { StatsComponent } from "../../components/statsComponent";
 
 export const PokedexDetail: FC = () => {
-  const { pokeSelected, navigate } = usePokedexDetail()
+  const { pokeSelected, navigate } = usePokedexDetail();
   return (
-    <Container>
-      <BackButton onClick={() => navigate("/")} aria-label="Regresar">
-        <FaArrowLeft size={24} />
-      </BackButton>
-
-      <PokemonName>{pokeSelected?.name}</PokemonName>
-      <PokemonImage src={pokeSelected?.image} alt={pokeSelected?.name} />
-      <PokemonDescription>{pokeSelected?.description}</PokemonDescription>
-
-      <StatsContainer>
-        <StatsTitle>Stats</StatsTitle>
-        <Stat>HP: {pokeSelected?.stats.hp}</Stat>
-        <Stat>Attack: {pokeSelected?.stats.attack}</Stat>
-        <Stat>Defense: {pokeSelected?.stats.defense}</Stat>
-        <Stat>Weight: {pokeSelected?.stats.weight}</Stat>
-        <Stat>Height: {pokeSelected?.stats.height}</Stat>
-      </StatsContainer>
-
-      <TypesContainer>
-        {pokeSelected?.types.map((type: any, index: number) => (
-          <Type
-            key={index}
-            typeColor={(background as any)[type] || colors.HEX.LIGHT_GRAY}
-          >
-            {type}
-          </Type>
-        ))}
-      </TypesContainer>
-    </Container>
-  )
-}
+    <SCContainerDetail
+      backgroundColor={(background as any)[pokeSelected?.types[0]]}
+    >
+      <SCHeaderCard>
+        <SCBackAndLabel>
+          <SCBackButton onClick={() => navigate("/")}>
+            <FaArrowLeft size={20} />
+          </SCBackButton>
+          <SCSpanName>{pokeSelected?.name}</SCSpanName>
+        </SCBackAndLabel>
+        <SCPokemonNumber>#{pokeSelected?.id}</SCPokemonNumber>
+      </SCHeaderCard>
+      <SCPokemonImageWrapper>
+        <SCPokemonImage src={pokeSelected?.image} alt={pokeSelected?.name} />
+      </SCPokemonImageWrapper>
+      <SCPokemonDetailCard>
+        <SCPokemonDescription
+          color={(background as any)[pokeSelected?.types[0]]}
+        >
+          {pokeSelected?.description}
+        </SCPokemonDescription>
+        <SCTypeContainer>
+          {pokeSelected?.types.map((type: any, index: number) => (
+            <SCTypeBadge
+              key={index}
+              typeColor={(background as any)[type] || colors.HEX.LIGHT_GRAY}
+            >
+              {type}
+            </SCTypeBadge>
+          ))}
+        </SCTypeContainer>
+        <StatsComponent pokeSelected={pokeSelected} />
+      </SCPokemonDetailCard>
+    </SCContainerDetail>
+  );
+};
