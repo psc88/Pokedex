@@ -1,5 +1,3 @@
-![image](https://github.com/user-attachments/assets/f35db8d1-1847-41ac-97ac-3dde416f9c25)# Pokedex APP 👾
-
 Esta aplicación Pokedex permite explorar el mundo de Pokémon a través de una interfaz interactiva y moderna. A continuación se destacan las principales características:
 
 * Visualización de Tarjetas
