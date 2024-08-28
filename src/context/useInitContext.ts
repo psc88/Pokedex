@@ -6,6 +6,7 @@ export const useInitContext = () => {
   const [loading, setLoading] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null)
   const [filterSelected, setFilterSelected] = useState<PokeTypes | null>(null)
+  const [currentPage, setCurrentPage] = useState<number>(1)
 
   const handleSetPokemonsList = (data: any) => {
     setPokemonsList(data)
@@ -23,14 +24,20 @@ export const useInitContext = () => {
     setFilterSelected(type)
   }
 
+  const handleSetCurrentPage = (value: number) => {
+    setCurrentPage(value)
+  }
+
   return {
     pokemonsList,
     loading,
     error,
     filterSelected,
+    currentPage,
     handleSetPokemonsList,
     handleSetLoading,
     handleSetError,
-    handleSetFilterSelected
+    handleSetFilterSelected,
+    handleSetCurrentPage
   }
 }

@@ -1,2 +1,2 @@
-export { Header } from './header'
 export { PokedexMain } from './pokedexMain'
+export { PokedexDetail } from './pokedexDetail'

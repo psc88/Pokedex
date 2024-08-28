@@ -5,11 +5,6 @@ export interface IUseFetchPokemon {
   handleSetPokemonsList: (data: any) => void
 }
 
-export type TPokeType = {
-  name: PokeTypes
-  url: string
-}
-
 export type TAllPokeResult = {
   name: PokeTypes
   url: string
@@ -23,4 +18,6 @@ export interface IContextValues {
   handleSetError: (value: string | null) => void
   filterSelected: PokeTypes | null
   handleSetFilterSelected: (type: PokeTypes | null) => void
+  currentPage: number
+  handleSetCurrentPage: (value: number) => void
 }

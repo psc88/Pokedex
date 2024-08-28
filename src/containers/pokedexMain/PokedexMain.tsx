@@ -1,19 +1,22 @@
-import { FC } from 'react'
+import { FC } from "react"
 import {
   SCContainerMain,
+  SCContainerPokedex,
   SCLabel,
   SCWrapperButtonAndLabel,
   SCWrapperCardComponent,
   SCWrapperFilter,
-} from './PokedexMain.styles'
-import { Header } from '../header'
-import { ButtonComponent } from '../../components'
-import { LoadingComponent } from '../../components/loadingComponent'
-import { usePokedexMain } from './usePokedexMain'
-import { CardComponent } from '../../components/cardComponent'
-import { PaginationComponent } from '../../components/paginationComponent'
-import { FilterComponent } from '../../components/filterComponent'
-import { messages } from '../../constant/messages'
+} from "./PokedexMain.styles"
+import { usePokedexMain } from "./usePokedexMain"
+import { messages } from "../../constant/messages"
+import {
+  ButtonComponent,
+  CardComponent,
+  FilterComponent,
+  HeaderComponent,
+  LoadingComponent,
+  PaginationComponent,
+} from "../../components"
 
 export const PokedexMain: FC = () => {
   const {
@@ -29,9 +32,9 @@ export const PokedexMain: FC = () => {
     pokemonsList,
   } = usePokedexMain()
   return (
-    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <SCContainerPokedex>
       <div>
-        <Header handleButtonBackToHome={() => {}} />
+        <HeaderComponent />
         {!!filteredPokemons.length && (
           <SCWrapperFilter>
             <FilterComponent
@@ -66,6 +69,6 @@ export const PokedexMain: FC = () => {
           </>
         )}
       </SCContainerMain>
-    </div>
+    </SCContainerPokedex>
   )
 }

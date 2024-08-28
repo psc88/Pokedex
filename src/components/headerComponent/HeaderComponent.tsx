@@ -1,15 +1,12 @@
 import { FC } from "react"
-import { SCFormContainer, SCHeader, SCHeaderContainer } from "./header.styles"
+import { SCFormContainer, SCHeader, SCHeaderContainer } from "./headerComponent.styles"
 import { messages } from "../../constant/messages"
 import { PokeIcon } from "../../images/PokeIcon"
-import { IHeader } from "./header.interface"
 
-export const Header: FC<IHeader> = ({
-  handleButtonBackToHome
-}) => {
+export const HeaderComponent: FC = () => {
   return (
     <SCHeaderContainer>
-      <SCHeader onClick={handleButtonBackToHome}>
+      <SCHeader>
         <PokeIcon />
         <SCFormContainer>{messages.POKEDEX_TITLE}</SCFormContainer>
       </SCHeader>

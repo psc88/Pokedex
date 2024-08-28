@@ -1,6 +1,12 @@
 import styled from "styled-components"
 import { colors } from "../../constant/constant"
 
+export const SCContainerPokedex = styled.div`
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+`
+
 export const SCWrapperCardComponent = styled.div`
   padding: 16px;
 `
@@ -18,13 +24,11 @@ export const SCContainerMain = styled.div`
 export const SCLabel = styled.span`
   padding: 16px;
   font-family: 'Pokemon Solid', sans-serif;
-  font-size: 2em;
-  line-height: 1em;
+  font-size: 32px;
   font-weight: 700;
   color: ${colors.HEX.VERY_DARK_GRAY};
-  letter-spacing: .2em;
+  letter-spacing: 8px;
   text-shadow: 2px 2px 5px ${colors.HEX.MEDIUM_GRAY};
-  transition: all 300ms;
 `
 
 export const SCWrapperButtonAndLabel = styled.div`

@@ -1,5 +1,5 @@
 import { URLBase } from "../constant/constant"
-import { IUseFetchPokemon, TAllPokeResult, TPokeType } from "../context/context.interface"
+import { IUseFetchPokemon, TAllPokeResult } from "../context/context.interface"
 
 export const useFetchPokemon = ({
   handleSetError,
@@ -20,6 +20,7 @@ export const useFetchPokemon = ({
           try {
             // Obtengo detalles del Pokémon
             const pokemonDetailResponse = await fetch(pokemon.url)
+
             // TODO: tipar pokemonDetail
             const pokemonDetail = await pokemonDetailResponse.json()
 
@@ -40,7 +41,7 @@ export const useFetchPokemon = ({
               handleSetError(`Error fetching species data for ${pokemonDetail.name}`)
             }
 
-            // Devuelvo sólo los datos que necesito
+            // Devuelvo sólo los datos que voy a usar
             return {
               id: pokemonDetail.id,
               name: pokemonDetail.name,

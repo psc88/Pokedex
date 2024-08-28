@@ -19,7 +19,7 @@ import {
 import { background } from "../../utils/BackgroundsByType"
 import { FaArrowLeft } from "react-icons/fa"
 import { colors } from "../../constant/constant"
-import { StatsComponent } from "../../components/statsComponent"
+import { StatsComponent } from "../../components"
 
 export const PokedexDetail: FC = () => {
   const { pokeSelected, navigate } = usePokedexDetail()
