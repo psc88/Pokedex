@@ -6,7 +6,17 @@ Esta aplicación Pokedex permite explorar el mundo de Pokémon a través de una 
 * Paginación
 * Carga Dinámica
 * Estilización con Bootstrap
-* Scrollable Container
+* Estilización con Styled-component
+* Uso de contexto para el manejo de datos
+* Filtros de pokemon por tipo
+* Scrollable
+
+# Print
+
+![image](https://github.com/user-attachments/assets/291297ab-e437-41ac-99ae-9e1b335db53a)
+![image](https://github.com/user-attachments/assets/36f9455a-b990-408c-9b16-517313208753)
+![image](https://github.com/user-attachments/assets/7f711a25-f300-4c08-9988-0224264507ce)
+
 
 La API es la siguiente: [Pokeapi](https://pokeapi.co/)
 La URL seria => `https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0`
