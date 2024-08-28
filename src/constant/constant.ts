@@ -16,7 +16,14 @@ export const colors = {
     BACKGROUND_BLACK: 'rgba(0, 0, 0, 0.1)',
     BACKGROUND_BLACK2: 'rgba(0, 0, 0, 0.2)',
     BACKGROUND_BLACK3: 'rgba(0, 0, 0, 0.3)',
-    RED_POKE: '#f00'
+    RED_POKE: '#f00',
+    YELLOW: '#FFCC00',
+    RED_POKEDEX: '#dd082f',
+    BACKGROUND_POKEDEX: '#42020c',
+    YELLOW_POKEDEX: '#ffcc02',
+    YELLOW_POKEDEX_BACKGROUND: '#ffdb4d',
+    RED2_POKEDEX: '#81091a',
+    BLUE: '#519afb'
   }
 }
 
@@ -28,3 +35,5 @@ export const statsMapping = [
   { label: "specialDttack"},
   { label: "speed"}
 ]
+
+export const itemsPerPage = 24

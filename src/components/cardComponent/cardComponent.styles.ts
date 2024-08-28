@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { colors } from "../../constant/constant"
 
 export const SCLabelCard = styled.div<{ color: string }>`
   background-color: ${({ color }) => color};
@@ -22,4 +23,12 @@ export const SCNumber = styled.div<{ color: string }>`
   right: 8px;
   font-weight: bold;
   color: ${({ color }) => color};
+`
+
+export const SCScrollableContainer = styled.div`
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 16px;
+  border: 2px solid ${colors.HEX.BACKGROUND_BLACK2};
+  border-radius: 16px;
 `

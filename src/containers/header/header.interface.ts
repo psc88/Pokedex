@@ -1,3 +1,3 @@
 export interface IHeader {
-  handleButtonBackToHome: () => void;
+  handleButtonBackToHome: () => void
 }

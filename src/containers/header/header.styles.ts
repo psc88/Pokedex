@@ -6,6 +6,8 @@ export const SCHeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  background-color: ${colors.HEX.LIGHTPINK};
 `
 
 export const SCHeader = styled.div`

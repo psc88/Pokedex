@@ -1,5 +1,6 @@
 export const messages = {
-  PokedexTitle: 'Pokedex',
-  placeHolderSearch: 'Buscar Pokemon',
-  buttonSearch: 'Buscar'
+  POKEDEX_TITLE: 'Pokedex',
+  DISCOVER_POKEMON: '¡Descrubre los Pokémon!',
+  SEARCHING_POKEMON: '¡Buscando Pokemons!',
+  SELECTED_TYPE: 'Seleccione tipo'
 }

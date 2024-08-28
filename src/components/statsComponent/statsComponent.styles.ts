@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { colors } from '../../constant/constant'
 
 export const SCStatsContainer = styled.div`
   display: grid;
@@ -14,13 +15,13 @@ export const SCStatLabel = styled.span<{ color: string }>`
 `
 
 export const SCStatBar = styled.div<{ value: number }>`
-  background-color: #ddd;
+  background-color: ${colors.HEX.LIGHT_GRAY};
   border-radius: 8px;
   position: relative;
 
   &::after {
     content: "";
-    background-color: #ffcc00;
+    background-color: ${colors.HEX.YELLOW};
     border-radius: 8px;
     display: block;
     height: 100%;

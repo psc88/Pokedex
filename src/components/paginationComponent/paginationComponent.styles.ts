@@ -1,43 +1,42 @@
-import styled from 'styled-components';
+import styled from "styled-components"
+import { colors } from "../../constant/constant"
 
-export const PaginationNav = styled.nav`
-  /* Opcional: Puedes añadir estilos adicionales aquí si es necesario */
-`;
-
-export const PaginationList = styled.ul`
+export const SCPaginationContainer = styled.nav`
   display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
   justify-content: center;
-`;
+  align-items: center;
+  gap: 8px;
+`
 
-export const PaginationItem = styled.li`
-  margin: 0;
-`;
-
-export const PaginationButton = styled.button`
-  display: block;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
-  border: 1px solid #dee2e6;
-  border-radius: 0.2rem;
-  background-color: #fff;
-  color: #007bff;
+export const SCArrowButton = styled.button<{ disabled: boolean }>`
+  background-color: ${({ disabled }) =>
+    disabled ? colors.HEX.LIGHT_GRAY : colors.HEX.YELLOW_POKEDEX};
+  color: ${colors.HEX.DARK_GRAY};
+  border: none;
+  border-radius: 16px;
+  padding: 12px 32px;
   cursor: pointer;
-
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 4px 8px ${colors.HEX.BACKGROUND_BLACK2};
+  &:hover {
+    background-color: ${({ disabled }) =>
+      disabled ? colors.HEX.LIGHT_GRAY : colors.HEX.YELLOW_POKEDEX_BACKGROUND};
+  }
   &:disabled {
     cursor: not-allowed;
-    color: #6c757d;
-    background-color: #e9ecef;
   }
+`
 
-  &:hover:not(:disabled) {
-    background-color: #e9ecef;
-  }
-
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5); /* Ajusta el color del foco si es necesario */
-  }
-`;
+export const SCCurrentPage = styled.div`
+  background-color: ${colors.HEX.BLUE};
+  color: white;
+  border-radius: 16px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+`

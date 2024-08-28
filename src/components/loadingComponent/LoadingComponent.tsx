@@ -1,23 +1,17 @@
-import Lottie from "lottie-react";
-import { FC } from "react";
-import animationData from "../../utils/animatePokemon.json";
+import Lottie from 'lottie-react'
+import { FC } from 'react'
+import animationData from '../../utils/animatePokemon.json'
+import { SCContainerLoader, SCSpanLoader } from './loadingComponent.styles'
+import { messages } from '../../constant/messages'
 
 export const LoadingComponent: FC = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-      }}
-    >
+    <SCContainerLoader>
       <Lottie
         animationData={animationData}
         style={{ width: 200, height: 200 }}
       />
-      <div>Buscando Pokemons...</div>
-    </div>
-  );
-};
+      <SCSpanLoader>{messages.SEARCHING_POKEMON}</SCSpanLoader>
+    </SCContainerLoader>
+  )
+}

@@ -21,8 +21,6 @@ export interface IContextValues {
   handleSetPokemonsList: (data: any) => void  
   handleSetLoading: (value: boolean) => void
   handleSetError: (value: string | null) => void
-  // types: TPokeType[]
-  // filterSelected: TPokeType
-  // filteredPokemon: string[] | null
-  // changeSelectedType: (type: TPokeType) => void
+  filterSelected: PokeTypes | null
+  handleSetFilterSelected: (type: PokeTypes | null) => void
 }

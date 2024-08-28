@@ -2,12 +2,36 @@ import styled from 'styled-components'
 import { colors } from '../../constant/constant'
 
 export const SCContainerDetail = styled.div<{backgroundColor: string}>`
+  display: flex;
+  height: 100vh;
+`
+
+export const SCContainerCardDetail = styled.div<{backgroundColor: string}>`
   background-color: ${({backgroundColor}) => backgroundColor};
   border-radius: 16px;
   box-shadow: 0 4px 8px ${colors.HEX.BACKGROUND_BLACK3};
   padding: 24px;
   max-width: 400px;
   margin: auto;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding: 16px;
+    box-shadow: none;
+  }
+`
+
+export const SCBackgroundOverlay = styled.div<{ backgroundColor: string }>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  opacity: 0.5;
+  z-index: -1;
 `
 
 export const SCHeaderCard = styled.div`
@@ -41,8 +65,8 @@ export const SCBackButton = styled.button`
   background: none;
   cursor: pointer;
   color: ${colors.HEX.WHITE};
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   transition: 0.3s ease;
   &:hover {
     background-color: ${colors.HEX.WHITE};
